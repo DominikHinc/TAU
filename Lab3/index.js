@@ -21,7 +21,7 @@ if (!(process.env.JEST_WORKER_ID !== undefined)) {
 // Find path from start to stop using A* algorithm, to ensure board is solvable
 export function findPath(board, start, stop) {
   const graph = new Graph(
-    board.map((row) => row.map((cell) => (cell === OBSTACLE ? 0 : 1)))
+    board.map((row) => row.map((cell) => (cell === OBSTACLE ? 0 : 1))),
   );
   const startNode = graph.grid[start.row][start.col];
   const endNode = graph.grid[stop.row][stop.col];
@@ -37,10 +37,10 @@ export function generateBoard(rows, cols, numberOfObstacles) {
   const startRow = Math.floor((Math.random() * rows) % Math.floor(rows / 2)); // Row of the start point - placed in the first half of the board
   const startCol = Math.floor((Math.random() * cols) % Math.floor(cols / 2)); // Column of the start point - placed in the first half of the board
   const stopRow = Math.floor(
-    ((Math.random() * rows) % (rows / 2)) + Math.floor(rows / 2)
+    ((Math.random() * rows) % (rows / 2)) + Math.floor(rows / 2),
   ); // Row of the stop point - placed in the second half of the board
   const stopCol = Math.floor(
-    ((Math.random() * cols) % (cols / 2)) + Math.floor(cols / 2)
+    ((Math.random() * cols) % (cols / 2)) + Math.floor(cols / 2),
   ); // Column of the stop point - placed in the second half of the board
 
   board[startRow][startCol] = START;
@@ -49,7 +49,7 @@ export function generateBoard(rows, cols, numberOfObstacles) {
   const path = findPath(
     board,
     { row: startRow, col: startCol },
-    { row: stopRow, col: stopCol }
+    { row: stopRow, col: stopCol },
   );
 
   console.log("path", path);

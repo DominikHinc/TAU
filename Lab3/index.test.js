@@ -25,7 +25,7 @@ describe("Lab3", () => {
         const { board } = generateBoard(rows, cols, 0);
         expect(board.length).toBe(rows);
         expect(board[0].length).toBe(cols);
-      }
+      },
     );
 
     it.each([
@@ -41,7 +41,7 @@ describe("Lab3", () => {
         expect(start.col).toBeLessThan(cols / 2);
         expect(stop.row).toBeGreaterThanOrEqual(Math.floor(rows / 2));
         expect(stop.col).toBeGreaterThanOrEqual(Math.floor(cols / 2));
-      }
+      },
     );
   });
   describe("findPath", () => {
