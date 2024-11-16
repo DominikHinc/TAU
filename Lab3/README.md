@@ -1,5 +1,19 @@
 # Lab 3
 
+## Setup
+
+```
+npm install
+
+node ./index.js
+```
+
+## Running tests
+
+```
+npm run test
+```
+
 ## Gameplay
 
 https://github.com/user-attachments/assets/95d8324b-56db-43f4-bdd2-e36d31281be7
